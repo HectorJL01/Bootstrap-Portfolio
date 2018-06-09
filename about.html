@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HJLPortfolio</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css/about.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <link rel="stylesheet" type="text/css" href="css/style.css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css/about.css">
 
     <div class="container">
         <div class="row" id="name">
@@ -23,18 +23,17 @@
             </div>
         </div>
     </div>
+    
     <div class="card bg-dark text-white" id"about">
             <img class="card-img" src="css/style.css/images/UtuadoPR.jpg" alt="Card image">
             <div class="card-img-overlay">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text">Last updated 3 mins ago</p>
+              <h5 class="card-title"><h5>A bit of me:</h5>
+              <p class="card-text">"If opportunity dosen't knock, build a dorr." Milton Berle</p>
+              <div class="textknowledge"> <h2>Basic knowledge in: </h2></p> </div>
+              <div class="text"> <h3> </h3></p> </div>
             </div>
-          </div>
-          <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. 
-              Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, 
-              sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. 
-              Cras mattis iudicium purus sit amet fermentum.</p>
+    </div>
+
 
     <div class="container" id="navBar">
         <nav class="navbar navbar-expand-lg">
@@ -42,33 +41,28 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <div class="col-7">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="face.html">Home
-                                <span class="sr-only"></span>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="col-6">
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                    </div>
-                    <div class="col-6">
-                        <li class="nav-item">
-                            <a class="nav-link" href="portfolio.html">Portfolio</a>
-                        </li>
-                    </div>
-                    <div class="col-6">
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </div>
-                </ul>
+    </div>
+
+    <div class="row" id="nav">
+            <div class="col">
+                
+            <a class="nav-link" href="face.html">Home</a>
+    
+            </div> 
+            <div class="col">
+    
+                <a class="nav-link" href="about.html">About</a>
+    
             </div>
-        </nav>
+            <div class="col">
+    
+                <a class="nav-link" href="portfolio.html">Portfolio</a>
+    
+            </div>
+            <div class="col">
+    
+                <a class="nav-link" href="contact.html">Contact</a>
+            </div>
     </div>
 
   
@@ -76,6 +70,57 @@
     <div clas="row" id="footer">
         Copyright &copy;
     </div>
+
+    <script>
+    $(document).read(function(){
+        $("h5").addId("#about");
+    });
+
+    
+    document.addEventListener('DOMContentLoaded',function(event){
+
+    var dataText = [ "HTML", "CSS", "FUN","JavaScript", "Node.js", "Firebase", "and more FUN"];
+  
+
+  function typeWriter(text, i, fnCallback) {
+
+    if (i < (text.length)) {
+
+     document.querySelector("h3").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 500);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 1000);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 80000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+     typeWriter(dataText[i], 0, function(){
+       // after callback (and whole text has been animated), start next text
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);{
+
+  }
+});
+    </script>
 
 
 
